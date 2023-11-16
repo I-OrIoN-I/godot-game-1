@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Action" load_steps=2 format=3 uid="uid://kbygbfbn6dng"]
+
+[ext_resource type="Script" path="res://Cod/action_res.gd" id="1_a2rvb"]
+
+[resource]
+script = ExtResource("1_a2rvb")
+i = 0
+data = {
+"damage": null,
+"title": null
+}

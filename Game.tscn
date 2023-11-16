@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://m8kmf1qxeldr"]
+
+[ext_resource type="Script" path="res://Cod/Manager.gd" id="1_cv3fh"]
+[ext_resource type="Texture2D" uid="uid://bxg0fgg7xq6l2" path="res://Sprites/piscla.png" id="1_hqggd"]
+[ext_resource type="PackedScene" uid="uid://cu4mwpjomyivb" path="res://Scene/action_button.tscn" id="2_0s2l8"]
+[ext_resource type="Texture2D" uid="uid://cq1dcjlx4p16d" path="res://Sprites/Gradient.png" id="2_l7j7d"]
+[ext_resource type="Texture2D" uid="uid://bpvudqd40mn1g" path="res://Sprites/Stabbing_sword_attack.png" id="3_u24oj"]
+[ext_resource type="Script" path="res://Cod/entity.gd" id="5_hosue"]
+[ext_resource type="Resource" uid="uid://kbygbfbn6dng" path="res://Actions/action1.tres" id="6_x57s2"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Manager" type="Node" parent="."]
+script = ExtResource("1_cv3fh")
+
+[node name="Player" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="Control" type="Control" parent="Player/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Player/CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -208.0
+offset_right = 218.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Action button" parent="Player/CanvasLayer/Control/HBoxContainer" instance=ExtResource("2_0s2l8")]
+layout_mode = 2
+
+[node name="Action button2" parent="Player/CanvasLayer/Control/HBoxContainer" instance=ExtResource("2_0s2l8")]
+layout_mode = 2
+icon = ExtResource("3_u24oj")
+
+[node name="Piscla" type="Sprite2D" parent="."]
+z_index = 999
+position = Vector2(960, 475)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_hqggd")
+script = ExtResource("5_hosue")
+healf = 1
+action = ExtResource("6_x57s2")
+
+[node name="Label" type="Label" parent="Piscla"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = 0.333374
+offset_right = -77.0
+offset_bottom = 58.3334
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Пискля"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Piscla"]
+visible = false
+z_index = -1
+scale = Vector2(0.75, 1.113)
+texture = ExtResource("2_l7j7d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
