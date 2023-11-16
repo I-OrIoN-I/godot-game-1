@@ -58,7 +58,7 @@ icon = ExtResource("3_u24oj")
 
 [node name="Piscla" type="Sprite2D" parent="."]
 z_index = 999
-position = Vector2(960, 475)
+position = Vector2(1548, 475)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_hqggd")
 script = ExtResource("5_hosue")
